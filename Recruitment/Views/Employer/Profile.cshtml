@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Business Profile";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+
+<div class="col-md-3">
+    <div class="LeftHandNav">
+        <label class="leftHandNavButton leftHandNavButtonSelected" style="border-top:1px solid lightgray;">
+            Business Profile
+        </label>
+        <label class="leftHandNavButton">
+            Messages
+        </label>
+        <label class="leftHandNavButton">
+            Contacts
+        </label>
+        <label class="leftHandNavButton">
+            Subscription Details
+        </label>
+    </div>
+</div>
+<div class="col-md-9">
+    <div class="rightHandNav">
+        <div class="busProfileTop">
+                @Html.Label("BusinessName", new { @class = "BusProBusName" })
+            <div>
+                <label class="busProfileTopDetail BusProContactName">
+                    Contact First Name
+                </label>
+                @Html.TextBox("FirstName", new { @class = "busProTopDetailInput" });
+            </div>
+            <div>
+                <label class="busProfileTopDetail BusProContactName">
+                    Contact Last Name
+                </label>
+                @Html.TextBox("LastName", new { @class = "busProTopDetailInput" });
+            </div>
+            <div>
+                <label class="busProfileTopDetail BusProContactEmail">
+                    Contact email
+                </label>
+                @Html.TextBox("Email", new { @class = "busProTopDetailInput" });
+            </div>
+            <div>
+                <label class="busProfileTopDetail BusProContactEmail" style="margin-bottom: 20px;">
+                    Business Postcode
+                </label>
+                @Html.TextBox("PostCode", new { @class = "busProTopDetailInput" });
+            </div>
+        </div>
+
+        <div class="busProfileDetails">
+            <div class="row">
+                <div class="col-md-6 busProMainDetailDiv" id="WorkingLanguageDiv">
+                    <label class="busProMainDetailLabel">Working languages</label>
+                    @*<input class="busProSpokenLanguages" id="WorkingLanguageSelect" />*@
+                    <select class="busProSpokenLanguages" name="workingLanguages[]" multiple="multiple">
+                        <option value="EN">English</option>
+                        <option value="DE">German</option>
+                        <option value="FR">French</option>
+                    </select>
+                </div>
+                <div class="col-md-6 busProMainDetailDiv" id="techStackDiv">
+                    <label class="busProMainDetailLabel">Tech Stack</label>
+                    @*<input class="busProSpokenLanguages" id="ProgrammingLanguageSelect"  />*@
+                    <select class="busProSpokenLanguages" name="techStack[]" multiple="multiple">
+                        <option value="C#">C#</option>
+                        <option value="JS">Javascript</option>
+                        <option value="CSS">CSS</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 busProMainDetailDiv">
+                    <label class="busProMainDetailLabel">Employee location</label>
+                    checkbox for onsite/remote/both
+                </div>
+                <div class="col-md-6 busProMainDetailDiv">
+                    <label class="busProMainDetailLabel">Employment Type</label>
+                    checkbox for permanent/contract
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //$(document).ready(function () {
+    //    $('busProSpokenLanguages').select2({
+    //        placeholder: 'Select an option'
+    //    });
+    //});
+</script>

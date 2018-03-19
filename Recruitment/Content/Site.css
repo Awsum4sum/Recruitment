@@ -1,0 +1,501 @@
+﻿
+
+html {
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif !important;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-inverse {
+    background-color: rgba(255, 255, 255, 0.96);
+    color: #02447d;
+    border-color: #d2d2d2;
+}
+
+.navbar-fixed-bottom {
+    border-top: 1px solid lightgray;
+}
+
+a.navbar-brand :hover {
+    background-color: black;
+}
+
+.LoginRegisterBox {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.RegisterSelection {
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 50px;
+}
+
+    .RegisterSelection :hover {
+        background-color: #132a4e;
+        color: white;
+    }
+
+.RegisterSelectionBox {
+    width: calc(50% - 2px);
+    text-align: center;
+    height: 35px;
+    border-top: 1px solid lightgray;
+    padding-top: 5px;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: white;
+    margin-bottom: -1px;
+}
+
+.RegisterHeader {
+    padding-top: 15px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-bottom: 15px;
+    background-color: #132a4e;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.RegisterHeaderNotSelected {
+    border-bottom: none;
+    margin-bottom: -1px;
+    height: 36px;
+}
+
+.registerLabel {
+}
+
+.registerInput {
+    max-width: 96%;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.registerButton {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+    .registerButton :hover {
+        background-color: #132a4e;
+        color: white;
+    }
+
+.NavbarLink {
+    border-right: 1px solid lightgray;
+}
+
+    .NavbarLink :hover {
+        background-color: #132a4e !important;
+        color: white !important;
+    }
+
+.NavbarLinkMain {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    margin-left: 15px;
+}
+
+    .NavbarLinkMain :hover {
+        background-color: #132a4e !important;
+        color: white !important;
+    }
+
+.navbar > .container .navbar-brand {
+    margin-left: 0px;
+}
+
+.navbar-header {
+    margin-left: 15px;
+}
+
+    .navbar-header :hover {
+        background-color: #132a4e !important;
+        color: white !important;
+    }
+
+.container .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+    background-color: #132a4e;
+    color: white;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.registerLink {
+    border-left: 1px solid lightgray;
+}
+
+    .registerLink :hover {
+        background-color: #132a4e !important;
+        color: white !important;
+    }
+
+.loginLink {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+    .loginLink :hover {
+        background-color: #132a4e !important;
+        color: white !important;
+    }
+
+.LoginHeader {
+    padding-top: 15px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-bottom: 15px;
+    background-color: #132a4e;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid lightgray;
+}
+
+.loginButtonDiv {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.LeftHandNav {
+    /*margin-top: 60px;*/
+}
+
+.rightHandNav {
+    margin-left: -30px;
+    padding-left: 25px;
+}
+
+.leftHandNavButton {
+    display: inherit;
+    height: 40px;
+    padding-top: 10px;
+    border: 1px solid lightgray;
+    border-top: none;
+    margin-bottom: 0px;
+    padding-left: 15px;
+    margin-left: -15px;
+}
+
+    .leftHandNavButton :hover {
+        background-color: #132a4e;
+        color: white;
+    }
+
+.leftHandNavButtonSelected {
+    background-color: #132a4e;
+    color: white;
+    border-right: none;
+}
+
+.busProfileTop {
+    background-color: #132a4e;
+    color: white;
+    margin-right: -15px;
+    margin-left: -25px;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
+.busProfileTopDetail {
+    font-weight: 500;
+    font-size: 16px;
+    width: 220px;
+    height: 30px;
+}
+
+
+.BusProBusName {
+    display: inherit;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.BusProContactName {
+}
+
+.BusProContactEmail {
+}
+
+.busProSpokenLanguages {
+    border: 1px solid #132a4e;
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 5px;
+}
+
+.busProfileDetails {
+}
+
+.busProTopDetailInput {
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    width: 300px;
+    max-width: 500px;
+}
+
+.busProMainDetailLabel {
+    display: inherit;
+}
+
+.busProMainDetailDiv {
+    margin-top: 30px;
+}
+
+.Message {
+    background-color: white;
+    border: 1px solid gray;
+    margin-top: 15px;
+    border-radius: 15px;
+}
+
+.col-md-12.Message :hover {
+    background-color: #132a4e;
+    color: white;
+}
+
+.MessageDetails {
+}
+
+.MessageNameRight {
+    font-weight: 500;
+}
+
+.MessageLanguageList {
+    font-weight: 500;
+}
+
+.MessageLocation {
+    font-weight: 500;
+}
+
+.MessageTime {
+    font-weight: 500;
+}
+
+.MessageOffer {
+    font-weight: 500;
+}
+
+.MessageList {
+    overflow: auto;
+}
+
+.messageHeader {
+    color: white;
+    background-color: #132a4e;
+    border-top-right-radius: 14px;
+    border-top-left-radius: 14px;
+    padding-top: 5px;
+}
+
+.MessagePageHeader {
+    width: calc(100% - 15px);
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    height: 50px;
+    padding-top: 10px;
+    font-size: 20px;
+    /*position:fixed;*/
+}
+
+.MessageSent {
+}
+
+.MessageContentSent {
+    margin-top: 25px;
+    border: 1px solid lightgray;
+    background-color: #132a4e;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-right: 50px;
+}
+
+.MessageReceived {
+}
+
+.MessageContentReceived {
+    margin-top: 25px;
+    border: 1px solid lightgray;
+    background-color: #e8e8e8;
+    padding: 15px;
+    border-radius: 15px;
+    margin-left: 50px;
+}
+
+.arrow_boxSent {
+    position: relative;
+    background: #132a4e;
+    border: 2px solid #none;
+}
+
+    .arrow_boxSent:after, .arrow_boxSent:before {
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .arrow_boxSent:after {
+        border-color: rgba(19, 42, 78, 0);
+        border-right-color: #132a4e;
+        border-width: 10px;
+        margin-top: -10px;
+    }
+
+    .arrow_boxSent:before {
+        border-color: rgba(0, 0, 0, 0);
+        border-right-color: #none;
+        border-width: 18px;
+        margin-top: -18px;
+    }
+
+.arrow_boxReceived {
+    position: relative;
+    background: #e8e8e8;
+    border: 1px solid #d3d3d3;
+}
+
+    .arrow_boxReceived:after, .arrow_boxReceived:before {
+        left: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .arrow_boxReceived:after {
+        border-color: rgba(232, 232, 232, 0);
+        border-left-color: #e8e8e8;
+        border-width: 10px;
+        margin-top: -10px;
+    }
+
+    .arrow_boxReceived:before {
+        border-color: rgba(211, 211, 211, 0);
+        border-left-color: #d3d3d3;
+        border-width: 11px;
+        margin-top: -11px;
+    }
+
+.MessageBack {
+    float: left;
+    font-weight: 500;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: 1px solid lightgray;
+    height: 50px;
+    margin-top: -10px;
+    padding-top: 10px;
+    margin-left: -15px;
+}
+
+    .MessageBack:hover {
+        background-color: #132a4e;
+        color: white;
+    }
+
+.MessageContentList {
+    /*margin-top: 60px;*/
+}
+
+.text-danger {
+    color: #b94a48;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    background-color: #f9cbcb;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+    .text-danger.ul.li {
+        padding-top: 10px;
+        padding-bottom: 1px;
+    }
+
+.RadioButton {
+    border: none;
+}
+
+.RadioButtonLabel {
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.radioButtonGroup {
+    border: 1px solid #adadad;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 3px;
+    padding-top: 2px;
+}
+
+.SaveChangesButton {
+    background-color: #132a4e;
+    border: none;
+    color: white;
+    margin-top: 30px;
+    padding: 10px;
+    width: 180px;
+    border-radius: 5px;
+}
+
+    .SaveChangesButton:hover {
+        border: 1px solid #132a4e;
+        background-color: white;
+        color: #132a4e;
+    }

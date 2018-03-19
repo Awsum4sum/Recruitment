@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Messages";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+
+<div class="col-md-3">
+    <div class="LeftHandNav">
+        <label class="leftHandNavButton " style="border-top:1px solid lightgray;">
+            Business Profile
+        </label>
+        <label class="leftHandNavButton leftHandNavButtonSelected">
+            Messages
+        </label>
+        <label class="leftHandNavButton">
+            Contacts
+        </label>
+        <label class="leftHandNavButton">
+            Subscription Details
+        </label>
+    </div>
+</div>
+<div class="col-md-9">
+    <div class="rightHandNav MessageList">
+        @for (int i = 0; i < 5; i++)
+        {
+            <div class="col-md-12 Message">
+                @*Top 10*@
+                <div class="row messageHeader">
+                    <div class="col-md-3">
+                        <label class="MessageDetails">Candidate Details:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <label class="MessageNameRight">Candidate Name (Only visible once candidate has accepted the initial offer)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <label class="MessageLanguageList">C#, ASP.NET, MVC, HTML5, CSS3, IIS, MS SQL Server, Bootstrap, MySQL, React</label>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="MessageLocation">Distance: 15km</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="MessageLocation">Remote/Onsite</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="MessageLocation">Permanent/Contract</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="MessageTime">Time of message</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="MessageOffer">Offer Amount</label>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

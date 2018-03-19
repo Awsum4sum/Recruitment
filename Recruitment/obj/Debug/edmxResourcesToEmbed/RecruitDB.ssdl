@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecruitDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Candidate">
+    <Key>
+      <PropertyRef Name="CandidateID" />
+    </Key>
+    <Property Name="CandidateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CandidateFirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CandidateLastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastLogin" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CandidateDetails">
+    <Key>
+      <PropertyRef Name="CandidateDetailsID" />
+    </Key>
+    <Property Name="CandidateDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Remote" Type="bit" Nullable="false" />
+    <Property Name="OnSite" Type="bit" Nullable="false" />
+    <Property Name="CandidateID" Type="int" Nullable="false" />
+    <Property Name="SpokenLanguageID" Type="int" Nullable="false" />
+    <Property Name="CandidateLocation" Type="geography" />
+    <Property Name="Contract" Type="bit" Nullable="false" />
+    <Property Name="PermanentPos" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RecruitDB.dbo.CandidateTechStack' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CandidateTechStack">
+    <Key>
+      <PropertyRef Name="CandidateDetailsID" />
+      <PropertyRef Name="TechID" />
+    </Key>
+    <Property Name="CandidateDetailsID" Type="int" Nullable="false" />
+    <Property Name="TechID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CandidateWorkItem">
+    <Key>
+      <PropertyRef Name="CadidateWorkItemID" />
+    </Key>
+    <Property Name="CadidateWorkItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CandidateID" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Employer">
+    <Key>
+      <PropertyRef Name="EmployerID" />
+    </Key>
+    <Property Name="EmployerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BusinessName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ContactFirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactLastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployerDetails">
+    <Key>
+      <PropertyRef Name="EmployerDetailsID" />
+    </Key>
+    <Property Name="EmployerDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Remote" Type="bit" Nullable="false" />
+    <Property Name="OnSite" Type="bit" Nullable="false" />
+    <Property Name="EmployerLocation" Type="geography" />
+    <Property Name="EmployerID" Type="int" Nullable="false" />
+    <Property Name="Contract" Type="bit" Nullable="false" />
+    <Property Name="PermanentPos" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RecruitDB.dbo.EmployerTechStack' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EmployerTechStack">
+    <Key>
+      <PropertyRef Name="EmployerDetailsID" />
+      <PropertyRef Name="TechID" />
+    </Key>
+    <Property Name="EmployerDetailsID" Type="int" Nullable="false" />
+    <Property Name="TechID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployerUser">
+    <Key>
+      <PropertyRef Name="EmployerUserID" />
+    </Key>
+    <Property Name="EmployerUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployerUserFirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmployerUserLastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmployerUserEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmployerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OfferID" Type="int" Nullable="false" />
+    <Property Name="MessageText" Type="nvarchar" MaxLength="1500" Nullable="false" />
+    <Property Name="CandidateID" Type="int" Nullable="false" />
+    <Property Name="EmployerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Offer">
+    <Key>
+      <PropertyRef Name="OfferID" />
+    </Key>
+    <Property Name="OfferID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OfferAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CandidateID" Type="int" Nullable="false" />
+    <Property Name="EmployerID" Type="int" Nullable="false" />
+    <Property Name="OfferDesc" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Techs">
+    <Key>
+      <PropertyRef Name="TechID" />
+    </Key>
+    <Property Name="TechID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TechName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CandidateDetails_Candidate">
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="1" />
+    <End Role="CandidateDetails" Type="Self.CandidateDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidate">
+        <PropertyRef Name="CandidateID" />
+      </Principal>
+      <Dependent Role="CandidateDetails">
+        <PropertyRef Name="CandidateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CandidateWorkItem_Candidate">
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="1" />
+    <End Role="CandidateWorkItem" Type="Self.CandidateWorkItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidate">
+        <PropertyRef Name="CandidateID" />
+      </Principal>
+      <Dependent Role="CandidateWorkItem">
+        <PropertyRef Name="CandidateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployerDetails_Employer">
+    <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
+    <End Role="EmployerDetails" Type="Self.EmployerDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employer">
+        <PropertyRef Name="EmployerID" />
+      </Principal>
+      <Dependent Role="EmployerDetails">
+        <PropertyRef Name="EmployerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployerTechStack_EmployerDetails">
+    <End Role="EmployerDetails" Type="Self.EmployerDetails" Multiplicity="1" />
+    <End Role="EmployerTechStack" Type="Self.EmployerTechStack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployerDetails">
+        <PropertyRef Name="EmployerDetailsID" />
+      </Principal>
+      <Dependent Role="EmployerTechStack">
+        <PropertyRef Name="EmployerDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployerTechStack_Techs">
+    <End Role="Techs" Type="Self.Techs" Multiplicity="1" />
+    <End Role="EmployerTechStack" Type="Self.EmployerTechStack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Techs">
+        <PropertyRef Name="TechID" />
+      </Principal>
+      <Dependent Role="EmployerTechStack">
+        <PropertyRef Name="TechID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployerUser_Employer">
+    <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
+    <End Role="EmployerUser" Type="Self.EmployerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employer">
+        <PropertyRef Name="EmployerID" />
+      </Principal>
+      <Dependent Role="EmployerUser">
+        <PropertyRef Name="EmployerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_Candidate">
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="1" />
+    <End Role="Message" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidate">
+        <PropertyRef Name="CandidateID" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="CandidateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_Employer">
+    <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
+    <End Role="Message" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employer">
+        <PropertyRef Name="EmployerID" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="EmployerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_Offer">
+    <End Role="Offer" Type="Self.Offer" Multiplicity="1" />
+    <End Role="Message" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Offer">
+        <PropertyRef Name="OfferID" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="OfferID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Offer_Candidate">
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="1" />
+    <End Role="Offer" Type="Self.Offer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidate">
+        <PropertyRef Name="CandidateID" />
+      </Principal>
+      <Dependent Role="Offer">
+        <PropertyRef Name="CandidateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Offer_Employer">
+    <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
+    <End Role="Offer" Type="Self.Offer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employer">
+        <PropertyRef Name="EmployerID" />
+      </Principal>
+      <Dependent Role="Offer">
+        <PropertyRef Name="EmployerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TechStack_CandidateDetails">
+    <End Role="CandidateDetails" Type="Self.CandidateDetails" Multiplicity="1" />
+    <End Role="CandidateTechStack" Type="Self.CandidateTechStack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CandidateDetails">
+        <PropertyRef Name="CandidateDetailsID" />
+      </Principal>
+      <Dependent Role="CandidateTechStack">
+        <PropertyRef Name="CandidateDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TechStack_Techs">
+    <End Role="Techs" Type="Self.Techs" Multiplicity="1" />
+    <End Role="CandidateTechStack" Type="Self.CandidateTechStack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Techs">
+        <PropertyRef Name="TechID" />
+      </Principal>
+      <Dependent Role="CandidateTechStack">
+        <PropertyRef Name="TechID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RecruitDBModelStoreContainer">
+    <EntitySet Name="Candidate" EntityType="Self.Candidate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CandidateDetails" EntityType="Self.CandidateDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CandidateWorkItem" EntityType="Self.CandidateWorkItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employer" EntityType="Self.Employer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployerDetails" EntityType="Self.EmployerDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployerUser" EntityType="Self.EmployerUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Offer" EntityType="Self.Offer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Techs" EntityType="Self.Techs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CandidateTechStack" EntityType="Self.CandidateTechStack" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CandidateTechStack].[CandidateDetailsID] AS [CandidateDetailsID], 
+    [CandidateTechStack].[TechID] AS [TechID]
+    FROM [dbo].[CandidateTechStack] AS [CandidateTechStack]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EmployerTechStack" EntityType="Self.EmployerTechStack" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EmployerTechStack].[EmployerDetailsID] AS [EmployerDetailsID], 
+    [EmployerTechStack].[TechID] AS [TechID]
+    FROM [dbo].[EmployerTechStack] AS [EmployerTechStack]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_CandidateDetails_Candidate" Association="Self.FK_CandidateDetails_Candidate">
+      <End Role="Candidate" EntitySet="Candidate" />
+      <End Role="CandidateDetails" EntitySet="CandidateDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CandidateWorkItem_Candidate" Association="Self.FK_CandidateWorkItem_Candidate">
+      <End Role="Candidate" EntitySet="Candidate" />
+      <End Role="CandidateWorkItem" EntitySet="CandidateWorkItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployerDetails_Employer" Association="Self.FK_EmployerDetails_Employer">
+      <End Role="Employer" EntitySet="Employer" />
+      <End Role="EmployerDetails" EntitySet="EmployerDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployerTechStack_EmployerDetails" Association="Self.FK_EmployerTechStack_EmployerDetails">
+      <End Role="EmployerDetails" EntitySet="EmployerDetails" />
+      <End Role="EmployerTechStack" EntitySet="EmployerTechStack" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployerTechStack_Techs" Association="Self.FK_EmployerTechStack_Techs">
+      <End Role="Techs" EntitySet="Techs" />
+      <End Role="EmployerTechStack" EntitySet="EmployerTechStack" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployerUser_Employer" Association="Self.FK_EmployerUser_Employer">
+      <End Role="Employer" EntitySet="Employer" />
+      <End Role="EmployerUser" EntitySet="EmployerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_Candidate" Association="Self.FK_Message_Candidate">
+      <End Role="Candidate" EntitySet="Candidate" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_Employer" Association="Self.FK_Message_Employer">
+      <End Role="Employer" EntitySet="Employer" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_Offer" Association="Self.FK_Message_Offer">
+      <End Role="Offer" EntitySet="Offer" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Offer_Candidate" Association="Self.FK_Offer_Candidate">
+      <End Role="Candidate" EntitySet="Candidate" />
+      <End Role="Offer" EntitySet="Offer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Offer_Employer" Association="Self.FK_Offer_Employer">
+      <End Role="Employer" EntitySet="Employer" />
+      <End Role="Offer" EntitySet="Offer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TechStack_CandidateDetails" Association="Self.FK_TechStack_CandidateDetails">
+      <End Role="CandidateDetails" EntitySet="CandidateDetails" />
+      <End Role="CandidateTechStack" EntitySet="CandidateTechStack" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TechStack_Techs" Association="Self.FK_TechStack_Techs">
+      <End Role="Techs" EntitySet="Techs" />
+      <End Role="CandidateTechStack" EntitySet="CandidateTechStack" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

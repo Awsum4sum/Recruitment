@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RecruitDBModelStoreContainer" CdmEntityContainer="RecruitDBEntities">
+    <EntitySetMapping Name="Candidates">
+      <EntityTypeMapping TypeName="RecruitDBModel.Candidate">
+        <MappingFragment StoreEntitySet="Candidate">
+          <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+          <ScalarProperty Name="CandidateFirstName" ColumnName="CandidateFirstName" />
+          <ScalarProperty Name="CandidateLastName" ColumnName="CandidateLastName" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CandidateDetails">
+      <EntityTypeMapping TypeName="RecruitDBModel.CandidateDetail">
+        <MappingFragment StoreEntitySet="CandidateDetails">
+          <ScalarProperty Name="CandidateDetailsID" ColumnName="CandidateDetailsID" />
+          <ScalarProperty Name="Remote" ColumnName="Remote" />
+          <ScalarProperty Name="OnSite" ColumnName="OnSite" />
+          <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+          <ScalarProperty Name="SpokenLanguageID" ColumnName="SpokenLanguageID" />
+          <ScalarProperty Name="CandidateLocation" ColumnName="CandidateLocation" />
+          <ScalarProperty Name="Contract" ColumnName="Contract" />
+          <ScalarProperty Name="PermanentPos" ColumnName="PermanentPos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CandidateWorkItems">
+      <EntityTypeMapping TypeName="RecruitDBModel.CandidateWorkItem">
+        <MappingFragment StoreEntitySet="CandidateWorkItem">
+          <ScalarProperty Name="CadidateWorkItemID" ColumnName="CadidateWorkItemID" />
+          <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employers">
+      <EntityTypeMapping TypeName="RecruitDBModel.Employer">
+        <MappingFragment StoreEntitySet="Employer">
+          <ScalarProperty Name="EmployerID" ColumnName="EmployerID" />
+          <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployerDetails">
+      <EntityTypeMapping TypeName="RecruitDBModel.EmployerDetail">
+        <MappingFragment StoreEntitySet="EmployerDetails">
+          <ScalarProperty Name="EmployerDetailsID" ColumnName="EmployerDetailsID" />
+          <ScalarProperty Name="Remote" ColumnName="Remote" />
+          <ScalarProperty Name="OnSite" ColumnName="OnSite" />
+          <ScalarProperty Name="EmployerLocation" ColumnName="EmployerLocation" />
+          <ScalarProperty Name="EmployerID" ColumnName="EmployerID" />
+          <ScalarProperty Name="Contract" ColumnName="Contract" />
+          <ScalarProperty Name="PermanentPos" ColumnName="PermanentPos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployerUsers">
+      <EntityTypeMapping TypeName="RecruitDBModel.EmployerUser">
+        <MappingFragment StoreEntitySet="EmployerUser">
+          <ScalarProperty Name="EmployerUserID" ColumnName="EmployerUserID" />
+          <ScalarProperty Name="EmployerUserFirstName" ColumnName="EmployerUserFirstName" />
+          <ScalarProperty Name="EmployerUserLastName" ColumnName="EmployerUserLastName" />
+          <ScalarProperty Name="EmployerUserEmail" ColumnName="EmployerUserEmail" />
+          <ScalarProperty Name="EmployerID" ColumnName="EmployerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="RecruitDBModel.Message">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="OfferID" ColumnName="OfferID" />
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+          <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+          <ScalarProperty Name="EmployerID" ColumnName="EmployerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Offers">
+      <EntityTypeMapping TypeName="RecruitDBModel.Offer">
+        <MappingFragment StoreEntitySet="Offer">
+          <ScalarProperty Name="OfferID" ColumnName="OfferID" />
+          <ScalarProperty Name="OfferAmount" ColumnName="OfferAmount" />
+          <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+          <ScalarProperty Name="EmployerID" ColumnName="EmployerID" />
+          <ScalarProperty Name="OfferDesc" ColumnName="OfferDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Techs">
+      <EntityTypeMapping TypeName="RecruitDBModel.Tech">
+        <MappingFragment StoreEntitySet="Techs">
+          <ScalarProperty Name="TechID" ColumnName="TechID" />
+          <ScalarProperty Name="TechName" ColumnName="TechName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CandidateTechStack" TypeName="RecruitDBModel.CandidateTechStack" StoreEntitySet="CandidateTechStack">
+      <EndProperty Name="CandidateDetails">
+        <ScalarProperty Name="CandidateDetailsID" ColumnName="CandidateDetailsID" />
+      </EndProperty>
+      <EndProperty Name="Techs">
+        <ScalarProperty Name="TechID" ColumnName="TechID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployerTechStack" TypeName="RecruitDBModel.EmployerTechStack" StoreEntitySet="EmployerTechStack">
+      <EndProperty Name="EmployerDetails">
+        <ScalarProperty Name="EmployerDetailsID" ColumnName="EmployerDetailsID" />
+      </EndProperty>
+      <EndProperty Name="Techs">
+        <ScalarProperty Name="TechID" ColumnName="TechID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

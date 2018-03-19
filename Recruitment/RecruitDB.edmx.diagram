@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d48f249800764b2495354ce10052c109" Name="Diagram1">
+        <EntityTypeShape EntityType="RecruitDBModel.Candidate" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitDBModel.CandidateDetail" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitDBModel.CandidateWorkItem" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitDBModel.Employer" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitDBModel.EmployerDetail" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitDBModel.EmployerUser" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitDBModel.Message" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitDBModel.Offer" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitDBModel.Tech" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="RecruitDBModel.FK_CandidateDetails_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitDBModel.FK_CandidateWorkItem_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitDBModel.FK_Message_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitDBModel.FK_Offer_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitDBModel.FK_EmployerDetails_Employer" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitDBModel.FK_EmployerUser_Employer" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitDBModel.FK_Message_Employer" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitDBModel.FK_Offer_Employer" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitDBModel.FK_Message_Offer" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitDBModel.CandidateTechStack" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitDBModel.EmployerTechStack" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

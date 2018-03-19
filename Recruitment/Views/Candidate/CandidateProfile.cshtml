@@ -1,0 +1,112 @@
+﻿@model Recruitment.Models.CandidateModel
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+
+<div class="col-md-3">
+    <div class="LeftHandNav">
+        <label class="leftHandNavButton leftHandNavButtonSelected" style="border-top:1px solid lightgray;">
+            Candidate Profile
+        </label>
+        <label class="leftHandNavButton">
+            Messages
+        </label>
+        <label class="leftHandNavButton">
+            Contacts
+        </label>
+    </div>
+</div>
+<div class="col-md-9">
+    <div class="rightHandNav">
+        @using (Html.BeginForm("SaveProfile", "Candidate", FormMethod.Post))
+        {
+           @Html.Hidden("CandidateID")
+            <div class="busProfileTop">
+                @Html.LabelFor(x => x.FullName, new { @class = "BusProBusName" })
+                @*<label class="BusProBusName">
+                    @Model.FullName
+                </label>*@
+                @{ 
+                    string test = Model.LastName;
+                }
+                <div>
+                    <label class="busProfileTopDetail BusProContactEmail">
+                        Contact email
+                    </label>
+                    @*<label class="busProfileTopDetail BusProContactEmail">
+                        @Model.Email
+                    </label>*@
+
+                    @Html.LabelFor(x => x.Email, new { @class = "busProfileTopDetail BusProContactEmail" })
+                </div>
+                <div>
+                    <label class="busProfileTopDetail BusProContactEmail">
+                        Address
+                    </label>
+                    @Html.TextBoxFor(x => x.Address, new { @class = "busProTopDetailInput" })
+                    @*<input class="busProTopDetailInput" />*@
+                </div>
+                <div>
+                    <label class="busProfileTopDetail BusProContactEmail" style="margin-bottom: 20px;">
+                        PostCode
+                    </label>
+                    @Html.TextBoxFor(x => x.PostCode, new { @class = "busProTopDetailInput" })
+                    @*<input class="busProTopDetailInput" />*@
+                </div>
+            </div>
+
+            <div class="busProfileDetails">
+                <div class="row">
+                    <div class="col-md-6 busProMainDetailDiv" id="WorkingLanguageDiv">
+                        <label class="busProMainDetailLabel">Spoken languages</label>
+                        @Html.DropDownListFor(x => x.Languages, Model.Languages.Select(x => new SelectListItem() { Text = x.sLanguageName.ToString() }), new { @name = "workingLanguages[]", @multiple = "multiple", @class = "busProSpokenLanguages" })
+                    </div>
+                    <div class="col-md-6 busProMainDetailDiv" id="techStackDiv">
+                        <label class="busProMainDetailLabel">Tech Stack</label>
+                        @Html.DropDownListFor(x => x.TechStack, Model.TechStack.Select(x => new SelectListItem() { Text = x.tStackName.ToString() }), new { @name = "techStack[]", @multiple = "multiple", @class = "busProSpokenLanguages" })
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 busProMainDetailDiv">
+                        <label class="busProMainDetailLabel">Working location</label>
+                        <div class="radioButtonGroup row">
+                            <div class="col-md-6">
+                                @Html.CheckBoxFor(x => x.Remote)
+                                <label for="Remote" class="RadioButtonLabel">Remote</label>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.CheckBoxFor(x => x.Onsite)
+                                <label for="Onsite" class="RadioButtonLabel">Onsite</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 busProMainDetailDiv">
+                        <label class="busProMainDetailLabel">Employment Type</label>
+                        <div class="radioButtonGroup row">
+                            <div class="col-md-6">
+                                @Html.CheckBoxFor(x => x.Contract)
+                                <label for="Contract" class="RadioButtonLabel">Contract</label>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.CheckBoxFor(x => x.Permanent)
+                                <label for="Permanent" class="RadioButtonLabel">Permanent</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="SaveChangesButton">Save Changes</button>
+
+            </div>
+        }
+    </div>
+</div>
+
+<script type="text/javascript">
+    function SaveCandidateChanges() {
+        var model = @Html.Raw(Json.Encode(Model));
+
+        console.log(model);
+    }
+</script>
